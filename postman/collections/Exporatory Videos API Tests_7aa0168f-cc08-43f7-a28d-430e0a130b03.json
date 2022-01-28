@@ -1,0 +1,165 @@
+{
+    "info": {
+        "_postman_id": "4e544cf5-67e4-4802-a2b7-c749e78070ad",
+        "name": "Exporatory Videos API Tests",
+        "description": "Simple API to demo the API Builder in Postman\n\nContact Support:\n Name: Arlemi Turpault\n Email: arlemi@postman.com",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "videos",
+            "item": [
+                {
+                    "name": "List all videos",
+                    "id": "2c1d092b-f608-41f5-b39c-9d86257048b0",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/videos/all",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "videos",
+                                "all"
+                            ]
+                        },
+                        "description": "Returns a list of all the Exploratory videos"
+                    },
+                    "response": [
+                        {
+                            "id": "6c91f1e0-0b74-4105-b93e-06ccc90fc18d",
+                            "name": "List of videos",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/videos/all",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "videos",
+                                        "all"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"name\": \"Public Workspaces\",\n  \"url\": \"https://www.youtube.com/watch?v=DjGbMdqnY64\",\n  \"views\": 7483\n },\n {\n  \"name\": \"Public Workspaces\",\n  \"url\": \"https://www.youtube.com/watch?v=DjGbMdqnY64\",\n  \"views\": 7483\n }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "Fetch one video by ID",
+                    "id": "0530a35a-2c26-42e5-af8a-e33d839f44e9",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/videos/:videoId",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "videos",
+                                ":videoId"
+                            ],
+                            "variable": [
+                                {
+                                    "id": "62711706-cfbf-48a5-9aa2-9717cd64a029",
+                                    "key": "videoId",
+                                    "value": "4",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        },
+                        "description": "Get a single video"
+                    },
+                    "response": [
+                        {
+                            "id": "314c166d-ee1d-4b32-927d-11ebdc2aabbb",
+                            "name": "List of videos",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/videos/:videoId",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "videos",
+                                        ":videoId"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "videoId",
+                                            "value": "4",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"name\": \"Public Workspaces\",\n \"url\": \"https://www.youtube.com/watch?v=DjGbMdqnY64\",\n \"views\": 7483\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "12c3dba4-cc2f-4969-bf2e-ebcaf1c30469"
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "754c181e-9b20-4e18-8d82-5cc5921f6954",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "e47fe037-ea64-4836-9336-05c112bdafa9",
+                "type": "text/javascript",
+                "exec": [
+                    "pm.test(\"Status code is 200\", function () {",
+                    "    pm.response.to.have.status(200);",
+                    "});"
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "8684e11a-64e4-478e-97e2-0031f0244e95",
+            "key": "baseUrl",
+            "value": "http://localhost:3000",
+            "type": "string"
+        }
+    ]
+}
