@@ -65,7 +65,7 @@ components:
         views:
           type: number
           description: Number of views
-          example: 7483
+          example: 7482
 
 tags:
   - name: videos
