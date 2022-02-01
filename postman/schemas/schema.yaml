@@ -4,8 +4,8 @@ info:
   version: 0.0.1
   description: Simple API to demo the API Builder in Postman
   contact:
-    name: Arlemi Turpault
-    email: arlemi@postman.com
+    name: Ben Coughlan
+    email: bencoughlan@hotmail.co.uk
 servers:
   - url: http://localhost:3000
     description: Demo API
