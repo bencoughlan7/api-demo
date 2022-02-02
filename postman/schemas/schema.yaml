@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Exploratory Demo API
+  title: Ben Test API
   version: 0.0.1
   description: Simple API to demo the API Builder in Postman
   contact:
@@ -8,15 +8,15 @@ info:
     email: bencoughlan@hotmail.co.uk
 servers:
   - url: http://localhost:3000
-    description: Demo API
+    description: Test files API
 paths:
-  /videos/all:
+  /files/all:
     get:
-      operationId: allVideos
+      operationId: allFiles
       summary: List all videos
-      description: Returns a list of all the Exploratory videos
+      description: Returns a list of all the files
       tags:
-        - videos
+        - files
       responses:
         '200':
           description: List of videos
@@ -25,16 +25,16 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/video"
-  /videos/{videoId}:
+                  $ref: "#/components/schemas/files"
+  /files/{fileId}:
     get:
-      operationId: oneVideo
-      summary: Fetch one video by ID 
-      description: Get a single video
+      operationId: oneFiles
+      summary: Fetch one file by ID 
+      description: Retrieve information for specific file
       tags:
-        - videos
+        - files
       parameters:
-      - name: videoId
+      - name: fileId
         in: path
         required: true
         schema:
@@ -43,11 +43,11 @@ paths:
 
       responses:
         '200':
-          description: List of videos
+          description: List of files
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/video"
+                $ref: "#/components/schemas/file"
 
 components:
   schemas:
@@ -56,17 +56,17 @@ components:
       properties:
         name:
           type: string
-          description: Video title
+          description: File title
           example: "Public Workspaces"
         url:
           type: string
-          description: Video URL
-          example: "https://www.youtube.com/watch?v=DjGbMdqnY64"
+          description: Files URL
+          example: "test.pdf"
         views:
           type: number
-          description: Number of views
+          description: File sizes
           example: 7482
 
 tags:
-  - name: videos
+  - name: files
     description: API returning info about Exploratory videos

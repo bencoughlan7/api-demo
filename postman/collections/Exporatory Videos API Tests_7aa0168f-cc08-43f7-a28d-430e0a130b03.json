@@ -1,27 +1,30 @@
 {
     "info": {
         "_postman_id": "4e544cf5-67e4-4802-a2b7-c749e78070ad",
-        "name": "Exporatory Videos API Tests",
+        "name": "Files API Tests",
         "description": "Simple API to demo the API Builder in Postman\n\nContact Support:\n Name: Arlemi Turpault\n Email: arlemi@postman.com",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
         {
-            "name": "videos",
+            "name": "files",
             "item": [
                 {
-                    "name": "List all videos",
+                    "name": "List all files",
                     "id": "2c1d092b-f608-41f5-b39c-9d86257048b0",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
                     "request": {
                         "method": "GET",
                         "header": [],
                         "url": {
-                            "raw": "{{baseUrl}}/videos/all",
+                            "raw": "{{baseUrl}}/files/all",
                             "host": [
                                 "{{baseUrl}}"
                             ],
                             "path": [
-                                "videos",
+                                "files",
                                 "all"
                             ]
                         },
@@ -30,7 +33,7 @@
                     "response": [
                         {
                             "id": "6c91f1e0-0b74-4105-b93e-06ccc90fc18d",
-                            "name": "List of videos",
+                            "name": "List of files",
                             "originalRequest": {
                                 "method": "GET",
                                 "header": [],
@@ -61,7 +64,7 @@
                     ]
                 },
                 {
-                    "name": "Fetch one video by ID",
+                    "name": "Fetch one file by ID",
                     "id": "0530a35a-2c26-42e5-af8a-e33d839f44e9",
                     "request": {
                         "method": "GET",
@@ -89,24 +92,23 @@
                     "response": [
                         {
                             "id": "314c166d-ee1d-4b32-927d-11ebdc2aabbb",
-                            "name": "List of videos",
+                            "name": "List of files",
                             "originalRequest": {
                                 "method": "GET",
                                 "header": [],
                                 "url": {
-                                    "raw": "{{baseUrl}}/videos/:videoId",
+                                    "raw": "{{baseUrl}}/files/:fileId",
                                     "host": [
                                         "{{baseUrl}}"
                                     ],
                                     "path": [
-                                        "videos",
-                                        ":videoId"
+                                        "files",
+                                        ":fileId"
                                     ],
                                     "variable": [
                                         {
-                                            "key": "videoId",
-                                            "value": "4",
-                                            "description": "(Required) "
+                                            "key": "fileId",
+                                            "value": null
                                         }
                                     ]
                                 }
@@ -156,7 +158,7 @@
     ],
     "variable": [
         {
-            "id": "8684e11a-64e4-478e-97e2-0031f0244e95",
+            "id": "b81f8a07-e6ce-435d-8b0d-b511bd3730d3",
             "key": "baseUrl",
             "value": "http://localhost:3000",
             "type": "string"
