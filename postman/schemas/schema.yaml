@@ -69,4 +69,4 @@ components:
 
 tags:
   - name: files
-    description: API returning info about Exploratory videos
+    description: API returning info about files
