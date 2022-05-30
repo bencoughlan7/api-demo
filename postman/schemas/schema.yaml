@@ -1,20 +1,20 @@
 openapi: 3.0.0
 info:
-  title: Ben Test API
+  title: Production Workflow API
   version: 0.0.1
-  description: Simple API to demo the API Builder in Postman
+  description: API for Integrations with Hogarth Production
   contact:
     name: Ben Coughlan
-    email: bencoughlan@hotmail.co.uk
+    email: ben.coughlan@hogarthww.com
 servers:
   - url: http://localhost:3000
-    description: Test files API
+    description: Test API
 paths:
-  /files/all:
+  /pwapi/all:
     get:
-      operationId: allFiles
-      summary: List all videos
-      description: Returns a list of all the files
+      operationId: getRecentFolderCreation
+      summary: List last 24 Hour of Folder Creation
+      description: Returns a list of all the processed folder creation jobs
       tags:
         - files
       responses:
@@ -26,15 +26,15 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/files"
-  /files/{fileId}:
-    get:
+  /pwapi/new:
+    post:
       operationId: oneFiles
       summary: Fetch one file by ID 
       description: Retrieve information for specific file
       tags:
         - files
       parameters:
-      - name: fileId
+      - name: new
         in: path
         required: true
         schema:
