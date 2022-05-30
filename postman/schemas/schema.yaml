@@ -57,7 +57,7 @@ components:
         name:
           type: string
           description: File title
-          example: "Public Workspaces"
+          example: "The Public Workspaces"
         url:
           type: string
           description: Files URL
